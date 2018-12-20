@@ -34,4 +34,46 @@ public class MyClassifer {
         File[] files = this.dir.listFiles(txtFileFilter);
         return files;
     }
+    public File[] getFilePPt(){
+        FileFilter PowerPointFileFilter =new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                String name = file.getName();
+                if(name.endsWith(".ppt")||name.endsWith(".pptx"))
+                    return true;
+                else
+                    return false;
+            }
+        };
+        File[] files = this.dir.listFiles(PowerPointFileFilter);
+        return files;
+    }
+    public File[] getFileDoc(){
+        FileFilter wordFileFilter =new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                String name = file.getName();
+                if(name.endsWith(".doc")||name.endsWith(".docx"))
+                    return true;
+                else
+                    return false;
+            }
+        };
+        File[] files = this.dir.listFiles(wordFileFilter);
+        return files;
+    }
+    public File[] getFileXlsx(){
+        FileFilter excelFileFilter =new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                String name = file.getName();
+                if(name.endsWith(".xlsx")||name.endsWith(".xls"))
+                    return true;
+                else
+                    return false;
+            }
+        };
+        File[] files = this.dir.listFiles(excelFileFilter);
+        return files;
+    }
 }
