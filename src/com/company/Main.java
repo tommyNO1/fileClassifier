@@ -8,7 +8,7 @@ public class Main {
 	// write your code here
         File dir = new File("C:\\Users\\13556\\Desktop\\临时工作区");
         MyClassifer classifer = new MyClassifer(dir);
-        File[] dirArray = classifer.getFilePPt();
+        File[] dirArray = classifer.getDiceCompressedFile();
         for(int i=0;i<dirArray.length;i++){
             File dirName = dirArray[i];
             System.out.println(dirName.toString());

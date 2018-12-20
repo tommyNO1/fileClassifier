@@ -9,71 +9,64 @@ public class MyClassifer {
         this.dir = dir;
     }
 
-    public File[] getFileDic(){
+    public File[] getDicDic(){
         FileFilter dirFilter =new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 return pathname.isDirectory();
             }
         };
-        File[] files = this.dir.listFiles(dirFilter);
-        return files;
+        return this.dir.listFiles(dirFilter);
     }
 
-    public File[] getFileTxt(){
+    public File[] getDicTxtFile(){
         FileFilter txtFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
                 String name = file.getName();
-                if(name.endsWith(".txt"))
-                    return true;
-                else
-                    return false;
+                return name.endsWith(".txt");
             }
         };
-        File[] files = this.dir.listFiles(txtFileFilter);
-        return files;
+        return this.dir.listFiles(txtFileFilter);
     }
-    public File[] getFilePPt(){
+    public File[] getDicPPtFile(){
         FileFilter PowerPointFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
                 String name = file.getName();
-                if(name.endsWith(".ppt")||name.endsWith(".pptx"))
-                    return true;
-                else
-                    return false;
+                return name.endsWith(".ppt") || name.endsWith(".pptx");
             }
         };
-        File[] files = this.dir.listFiles(PowerPointFileFilter);
-        return files;
+        return this.dir.listFiles(PowerPointFileFilter);
     }
-    public File[] getFileDoc(){
+    public File[] getDicWordFile(){
         FileFilter wordFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
                 String name = file.getName();
-                if(name.endsWith(".doc")||name.endsWith(".docx"))
-                    return true;
-                else
-                    return false;
+                return name.endsWith(".doc") || name.endsWith(".docx");
             }
         };
-        File[] files = this.dir.listFiles(wordFileFilter);
-        return files;
+        return this.dir.listFiles(wordFileFilter);
     }
-    public File[] getFileXlsx(){
+    public File[] getDicExcelFile(){
         FileFilter excelFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
                 String name = file.getName();
-                if(name.endsWith(".xlsx")||name.endsWith(".xls"))
-                    return true;
-                else
-                    return false;
+                    return name.endsWith(".xlsx") || name.endsWith(".xls");
             }
         };
-        File[] files = this.dir.listFiles(excelFileFilter);
-        return files;
+        return this.dir.listFiles(excelFileFilter);
+    }
+    public File[] getDiceCompressedFile(){
+        FileFilter compressedFileFilter =new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                String name = file.getName();
+                return name.endsWith(".rar") || name.endsWith(".zip") || name.endsWith(".7z");
+            }
+        };
+        return this.dir.listFiles(compressedFileFilter);
     }
 }
