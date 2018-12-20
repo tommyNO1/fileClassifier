@@ -9,8 +9,7 @@ public class Main {
         File dir = new File("C:\\Users\\13556\\Desktop\\临时工作区");
         MyClassifer classifer = new MyClassifer(dir);
         File[] dirArray = classifer.getDiceCompressedFile();
-        for(int i=0;i<dirArray.length;i++){
-            File dirName = dirArray[i];
+        for (File dirName : dirArray) {
             System.out.println(dirName.toString());
         }
     }
