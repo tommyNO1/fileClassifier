@@ -1,4 +1,57 @@
 package com.company;
 
+import java.io.*;
+
 public class MyTranslocator {
+    public void copyFile(File srcFile,String destDir){
+
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        String fileName = srcFile.getName();
+        String destPath = destDir+File.separator+fileName;
+        try {
+            fis = new FileInputStream(srcFile);
+            fos = new FileOutputStream(new File (destPath));
+            byte[] bs = new byte[1024];
+            int count = 0;
+            while((count=fis.read(bs))!=-1){
+                fos.write(bs,0,count);
+                fos.flush();
+            }
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            if(fis!=null){
+                try {
+                    fis.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+            if(fos!=null){
+                try {
+                    fos.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    public void copyDiretory(File srcFile,String destDir){
+        String dirName = srcFile.getName();
+        String destPath = destDir+File.separator+dirName;
+        File destDirFile =new File(destPath);
+        destDirFile.mkdirs();
+        File[] fileList = srcFile.listFiles();
+        for (File temp:fileList){
+            if (temp.isFile()){
+                copyFile(temp,destPath);
+            }else if(temp.isDirectory()){
+                copyDiretory(temp,destPath);
+            }
+        }
+
+    }
 }

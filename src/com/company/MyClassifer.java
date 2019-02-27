@@ -59,7 +59,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(excelFileFilter);
     }
-    public File[] getDiceCompressedFile(){
+    public File[] getDicCompressedFile(){
         FileFilter compressedFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -68,5 +68,25 @@ public class MyClassifer {
             }
         };
         return this.dir.listFiles(compressedFileFilter);
+    }
+    public File[] getDicImageFile(){
+        FileFilter imageFileFilter =new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                String name = file.getName();
+                return name.endsWith(".png") || name.endsWith(".bwp") || name.endsWith("jpg")|| name.endsWith("tif");
+            }
+        };
+        return this.dir.listFiles(imageFileFilter);
+    }
+    public File[] getDicPdfFile(){
+        FileFilter pdfFileFilter =new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                String name = file.getName();
+                return name.endsWith(".pdf");
+            }
+        };
+        return this.dir.listFiles(pdfFileFilter);
     }
 }
