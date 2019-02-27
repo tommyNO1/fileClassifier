@@ -49,9 +49,11 @@ public class Main {
             for(File temp:fileList){
                 if (temp.isFile()){
                     fileTranslocator.copyFile(temp,fileDestPath);
+                    fileTranslocator.deleteFile(temp);
                 }
                 if (temp.isDirectory()){
                     fileTranslocator.copyDiretory(temp,fileDestPath);
+                    fileTranslocator.deleteDir(temp);
                 }
             }
         }

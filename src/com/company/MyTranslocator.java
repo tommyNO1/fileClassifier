@@ -52,6 +52,20 @@ public class MyTranslocator {
                 copyDiretory(temp,destPath);
             }
         }
-
+    }
+    public void deleteFile(File file){
+        file.delete();
+    }
+    public boolean deleteDir(File dir){
+        if (dir.isDirectory()){
+            String[] childern = dir.list();
+            for (String temp:childern){
+                boolean flag = deleteDir(new File(dir,temp));
+                if (!flag){
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
     }
 }
