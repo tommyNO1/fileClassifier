@@ -18,28 +18,28 @@ public class Main {
             String fileDestPath = destPath+File.separator+type;
             switch (type){
                 case "compress file":
-                    fileList = classifer.getDicCompressedFile();
+                    fileList = classifer.getDirCompressedFile();
                     break;
                 case "image":
-                    fileList = classifer.getDicImageFile();
+                    fileList = classifer.getDirImageFile();
                     break;
                 case "power point":
-                    fileList = classifer.getDicPPtFile();
+                    fileList = classifer.getDirPPtFile();
                     break;
                 case  "txt file":
-                    fileList = classifer.getDicTxtFile();
+                    fileList = classifer.getDirTxtFile();
                     break;
                 case "excel":
-                    fileList = classifer.getDicExcelFile();
+                    fileList = classifer.getDirExcelFile();
                     break;
                 case "word":
-                    fileList = classifer.getDicWordFile();
+                    fileList = classifer.getDirWordFile();
                     break;
                 case "pdf":
-                    fileList = classifer.getDicPdfFile();
+                    fileList = classifer.getDirPdfFile();
                     break;
                 case  "diretory":
-                    fileList = classifer.getDicDic();
+                    fileList = classifer.getDirDir();
                     break;
                 default:
                     System.out.println("没找到对应的类别");

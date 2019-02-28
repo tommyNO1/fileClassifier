@@ -61,9 +61,10 @@ public class MyTranslocator {
             String[] childern = dir.list();
             for (String temp:childern){
                 boolean flag = deleteDir(new File(dir,temp));
-                if (!flag){
-                    return false;
+                if (flag) {
+                    continue;
                 }
+                return false;
             }
         }
         return dir.delete();

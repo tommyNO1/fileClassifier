@@ -9,7 +9,7 @@ public class MyClassifer {
         this.dir = dir;
     }
 
-    public File[] getDicDic(){
+    public File[] getDirDir(){
         FileFilter dirFilter =new FileFilter() {
             @Override
             public boolean accept(File pathname) {
@@ -19,7 +19,7 @@ public class MyClassifer {
         return this.dir.listFiles(dirFilter);
     }
 
-    public File[] getDicTxtFile(){
+    public File[] getDirTxtFile(){
         FileFilter txtFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -29,7 +29,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(txtFileFilter);
     }
-    public File[] getDicPPtFile(){
+    public File[] getDirPPtFile(){
         FileFilter PowerPointFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -39,7 +39,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(PowerPointFileFilter);
     }
-    public File[] getDicWordFile(){
+    public File[] getDirWordFile(){
         FileFilter wordFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -49,7 +49,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(wordFileFilter);
     }
-    public File[] getDicExcelFile(){
+    public File[] getDirExcelFile(){
         FileFilter excelFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -59,7 +59,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(excelFileFilter);
     }
-    public File[] getDicCompressedFile(){
+    public File[] getDirCompressedFile(){
         FileFilter compressedFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -69,7 +69,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(compressedFileFilter);
     }
-    public File[] getDicImageFile(){
+    public File[] getDirImageFile(){
         FileFilter imageFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -79,7 +79,7 @@ public class MyClassifer {
         };
         return this.dir.listFiles(imageFileFilter);
     }
-    public File[] getDicPdfFile(){
+    public File[] getDirPdfFile(){
         FileFilter pdfFileFilter =new FileFilter() {
             @Override
             public boolean accept(File file) {
