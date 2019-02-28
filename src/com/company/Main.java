@@ -5,7 +5,6 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args){
-	// write your code here
         String srcPath="C:\\Users\\13556\\Desktop\\临时工作区";
         String destPath="F:\\test";
         String[] fileType = new String[]{"compress file", "image", "power point", "txt file", "excel","word","pdf","diretory"};
@@ -13,7 +12,7 @@ public class Main {
         MyClassifer classifer = new MyClassifer(dir);
         File[] fileList = null;
         File destDicFile;
-        MyTranslocator fileTranslocator = new MyTranslocator();
+        MyTranslator fileTranslator = new MyTranslator();
         for(String type : fileType){
             String fileDestPath = destPath+File.separator+type;
             switch (type){
@@ -48,12 +47,12 @@ public class Main {
             destDicFile.mkdirs();
             for(File temp:fileList){
                 if (temp.isFile()){
-                    fileTranslocator.copyFile(temp,fileDestPath);
-                    fileTranslocator.deleteFile(temp);
+                    fileTranslator.copyFile(temp,fileDestPath);
+                    fileTranslator.deleteFile(temp);
                 }
                 if (temp.isDirectory()){
-                    fileTranslocator.copyDiretory(temp,fileDestPath);
-                    fileTranslocator.deleteDir(temp);
+                    fileTranslator.copyDiretory(temp,fileDestPath);
+                    fileTranslator.deleteDir(temp);
                 }
             }
         }

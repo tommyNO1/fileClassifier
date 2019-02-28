@@ -1,8 +1,12 @@
 package com.company;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class MyTranslocator {
+public class MyTranslator {
     public void copyFile(File srcFile,String destDir){
 
         FileInputStream fis = null;
