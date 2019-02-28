@@ -5,8 +5,10 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args){
-        String srcPath="C:\\Users\\13556\\Desktop\\临时工作区";
-        String destPath="F:\\test";
+        MyProperties pps = new MyProperties("G:\\deaProjects\\FileClassifer\\src\\confFile.properties");
+//        System.out.println(pps.getPathNamebyPropertiesFile("srcPathName"));
+        String srcPath=pps.getPathNamebyPropertiesFile("srcPathName");
+        String destPath=pps.getPathNamebyPropertiesFile("destPathName");
         String[] fileType = new String[]{"compress file", "image", "power point", "txt file", "excel","word","pdf","diretory"};
         File dir = new File(srcPath);
         MyClassifer classifer = new MyClassifer(dir);
